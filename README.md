@@ -11,7 +11,7 @@ PubkeyAuthentication yes
 PassowrdAuthentication no  
 PermitEmptyPassword no  
 ChallengeResponseAuthentication no  
-# Expect .ssh/authorized_keys2 to be disregarded by default in future.  
+Expect .ssh/authorized_keys2 to be disregarded by default in future.  
 AuthorizedKeysFile      .ssh/authorized_keys .ssh/authorized_keys2  
 
 
