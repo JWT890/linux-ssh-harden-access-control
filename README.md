@@ -13,5 +13,7 @@ PermitEmptyPassword no
 ChallengeResponseAuthentication no  
 Expect .ssh/authorized_keys2 to be disregarded by default in future.  
 AuthorizedKeysFile      .ssh/authorized_keys .ssh/authorized_keys2  
+<img width="614" height="500" alt="image" src="https://github.com/user-attachments/assets/610b4b64-e090-4bb1-9d3f-10662f6d9cb0" />  
+
 
 
