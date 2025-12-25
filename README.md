@@ -7,3 +7,11 @@ Port 22
 Protocol 2  
 AddressFamily inet  
 PermitRootLogin no  
+PubkeyAuthentication yes  
+PassowrdAuthentication no  
+PermitEmptyPassword no  
+ChallengeResponseAuthentication no  
+# Expect .ssh/authorized_keys2 to be disregarded by default in future.  
+AuthorizedKeysFile      .ssh/authorized_keys .ssh/authorized_keys2  
+
+
