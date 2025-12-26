@@ -16,7 +16,8 @@ AuthorizedKeysFile      .ssh/authorized_keys .ssh/authorized_keys2
 <img width="614" height="500" alt="image" src="https://github.com/user-attachments/assets/610b4b64-e090-4bb1-9d3f-10662f6d9cb0" />  
 <img width="949" height="728" alt="image" src="https://github.com/user-attachments/assets/b56c2ef9-36de-4678-9d70-67d92a62231f" />  
 <img width="847" height="783" alt="image" src="https://github.com/user-attachments/assets/1461d2c6-8771-473e-b48e-ec56c5b1e4d2" />  
-
+Then after making the neccessary changes and checking for spelling errors from the screenshots, type sudo systemctl restart ssh to restart ssh.  
+Then generate the keygen on the host and client computers by typing ssh-keygen -t ed25519 -a 100 on a client VM or in this case WSL or WIndows Subsystem For Linux.  
 
 
 
