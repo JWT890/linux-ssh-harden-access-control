@@ -32,6 +32,14 @@ Then save it and type sudo nano /etc/postfix/sasl_password and add this [smtp.gm
 Then save it and enter sudo chmod 600 /etc/postfix/sasl_passwd, then sudo postmap /etc/postfix/sasl_passwd, then sudo systemctl restart postfix.  
 Then type echo "Test from PostFix" | mail -s "Test" email and press enter, then go check your email for the result:  
 <img width="207" height="155" alt="image" src="https://github.com/user-attachments/assets/27fc54a1-01a1-4cc7-b485-60472718a801" />  
+Then go to jail.local and add to [DEFAULT] the destination email, sender email, and the sendername along with action = %(action_mw)s and save it, then type sudo systemctl restart fail2ban. Then type sudo fail2ban-client status sshd and make sure to it looks like this:  
+<img width="495" height="168" alt="image" src="https://github.com/user-attachments/assets/4cbb3544-08d3-4a20-b176-89dfadc8dff0" />  
+To test this type sudo fail2ban-client set sshd banip 1.2.3.4 and press enter, then go check your email for the result:  
+<img width="429" height="263" alt="image" src="https://github.com/user-attachments/assets/7ded2d64-cd9c-434c-8809-9c70bfe9eb2f" />  
+<img width="635" height="700" alt="image" src="https://github.com/user-attachments/assets/a30f42bc-cf0c-4d03-ae9d-e37accca74bf" />  
+Then to unban it type sudo fail2ban-client set sshd unbanip 1.2.3.4 and it will be unbanned.  
+
+
 
 
 
