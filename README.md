@@ -39,6 +39,10 @@ To test this type sudo fail2ban-client set sshd banip 1.2.3.4 and press enter, t
 <img width="635" height="700" alt="image" src="https://github.com/user-attachments/assets/a30f42bc-cf0c-4d03-ae9d-e37accca74bf" />  
 Then to unban it type sudo fail2ban-client set sshd unbanip 1.2.3.4 and it will be unbanned.  
 To add another layer of security, add another layer of SSH security sudo apt install libpam-google-authenticator, then after installation enter google-authenticator and press y to all the prompts and scan the QR code with a authenticator app like Duo and sign in with the cdoe from the app.  
+As one way to test it, install hydra on a attacker VM and create a users.txt file with random info in it and a passwords.txt file with random passwords and enter this command hydra -L users.txt -P passwords.txt ssh://10.0.0.20 and press enter. Should see this:  
+<img width="1078" height="173" alt="image" src="https://github.com/user-attachments/assets/a09ba07f-9e58-4a40-bc77-204f0a8bf0c9" />  
+<img width="526" height="170" alt="image" src="https://github.com/user-attachments/assets/c5b3129c-b5a8-47f8-ba03-41c03273c8fc" />  
+
 
 
 
