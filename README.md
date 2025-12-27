@@ -25,6 +25,17 @@ After that its time to install fail2ban, type sudo apt install fail2ban to insta
 <img width="153" height="136" alt="image" src="https://github.com/user-attachments/assets/98ab2afe-a083-4601-83f9-bdfd0aca63cd" />  
 Enter in this for now.  
 Then check to see if the server is ready by typing sudo fail2ban-server -t, then run sudo systemctl enable fail2ban then sudo systemctl start fail2ban. Then run sudo fail2ban-client status sshd to see if its up and running.  
+To ensure the fail2ban alerts are being sent to your email, you will need to install postfix. Type sudo apt install postfix -y and then type sudo nano /etc/postfix/main.cf after installation.  
+In the main.cf file, go all the way down and enter in this information:  
+<img width="494" height="115" alt="image" src="https://github.com/user-attachments/assets/278c5ab7-96af-4e93-9f38-846550e0c8e5" />  
+Then save it and type sudo nano /etc/postfix/sasl_password and add this [smtp.gmail.com]:587 jwtaylor659@gmail.com:app_password.  
+Then save it and enter sudo chmod 600 /etc/postfix/sasl_passwd, then sudo postmap /etc/postfix/sasl_passwd, then sudo systemctl restart postfix.  
+Then type echo "Test from PostFix" | mail -s "Test" email and press enter, then go check your email for the result:  
+<img width="207" height="155" alt="image" src="https://github.com/user-attachments/assets/27fc54a1-01a1-4cc7-b485-60472718a801" />  
+
+
+
+
 
 
 
