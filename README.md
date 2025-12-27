@@ -38,6 +38,8 @@ To test this type sudo fail2ban-client set sshd banip 1.2.3.4 and press enter, t
 <img width="429" height="263" alt="image" src="https://github.com/user-attachments/assets/7ded2d64-cd9c-434c-8809-9c70bfe9eb2f" />  
 <img width="635" height="700" alt="image" src="https://github.com/user-attachments/assets/a30f42bc-cf0c-4d03-ae9d-e37accca74bf" />  
 Then to unban it type sudo fail2ban-client set sshd unbanip 1.2.3.4 and it will be unbanned.  
+To add another layer of security, add another layer of SSH security sudo apt install libpam-google-authenticator, then after installation enter google-authenticator and press y to all the prompts and scan the QR code with a authenticator app like Duo and sign in with the cdoe from the app.  
+
 
 
 
