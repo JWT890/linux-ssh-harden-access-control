@@ -18,8 +18,9 @@ Make sure for allowed users that have you the name of the user account that you 
 <img width="949" height="728" alt="image" src="https://github.com/user-attachments/assets/b56c2ef9-36de-4678-9d70-67d92a62231f" />  
 <img width="847" height="783" alt="image" src="https://github.com/user-attachments/assets/1461d2c6-8771-473e-b48e-ec56c5b1e4d2" />  
 Then after making the neccessary changes and checking for spelling errors from the screenshots, type sudo systemctl restart ssh to restart ssh.  
-Then generate the keygen on the host and client computers by typing ssh-keygen -t ed25519 -a 100 on a client VM or in this case WSL or WIndows Subsystem For Linux.  
-
+Then generate the keygen on the host and client computers by typing ssh-keygen -t ed25519 -a 100 on a client VM or in this case WSL or Windows Subsystem For Linux.  
+On the WSL Linux server, run ssh-keygen -t ed25519 to create a ssh-key to get into the hardened Linux server, then run the command ssh-copy-id -i /home/jon/.ssh/id_ed25519.pub user@x.x.x.x.   
+Or run cat /home/user/.ssh/id_ed25519.pub and copy and paste the ssh key into the main server by typing cat ~./ssh/id_ed25519.pub | ssh user@x.x.x.x "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys".  
 
 
 
