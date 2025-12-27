@@ -21,6 +21,6 @@ Then after making the neccessary changes and checking for spelling errors from t
 Then generate the keygen on the host and client computers by typing ssh-keygen -t ed25519 -a 100 on a client VM or in this case WSL or Windows Subsystem For Linux.  
 On the WSL Linux server, run ssh-keygen -t ed25519 to create a ssh-key to get into the hardened Linux server, then run the command ssh-copy-id -i /home/jon/.ssh/id_ed25519.pub user@x.x.x.x.   
 Or run cat /home/user/.ssh/id_ed25519.pub and copy and paste the ssh key into the main server by typing cat ~./ssh/id_ed25519.pub | ssh user@x.x.x.x "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys".  
-
+After that its time to install fail2ban, type sudo apt install fail2ban to install it, then type sudo /etc/fail2ban/jail.local to enter the fail2ban info needed to harden the server more.  
 
 
