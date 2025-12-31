@@ -45,6 +45,20 @@ As one way to test it, install hydra on a attacker VM and create a users.txt fil
 In this project, I hardened SSH on Linux by enforcing key-based authentication, disabling root login, and restricting access to specific users or groups. I also secured the server by disabling weak ciphers and protocols, limiting login attempts, and optionally using tools like fail2ban to prevent brute-force attacks. The goal was to reduce the attack surface while following best practices and providing clear setup guidance.  
 *Note, might go test a few more times and will document it*
 
+# Metasploit test
+To install Metasploit on WSL:  
+sudo apt install -y curl gpg postgresql  
+then curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall  
+chmod 755 msfinstall  
+sudo ./msfinstall this will take a few minutes    
+sudo service postgresql start  
+sudo msfdb init  *It might pop with the line Please run msfdb as a non-root user if you are doing it in WSL*  
+Steps:  
+sudo -u postgresql psql -c "CREATE USER $USER WITH PASSWORD 'password';"  
+sudo -u postgresql psql -c "ALTER USER $USER CREATEDB;"  
+sudo -c postgresql psql -c "GRANT ALL PRIVILEGES ON DATABASE msf_database to $USER;"  
+Then run sudo msdb init.  
+
 
 
 
