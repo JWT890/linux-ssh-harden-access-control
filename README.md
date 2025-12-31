@@ -41,8 +41,7 @@ Then to unban it type sudo fail2ban-client set sshd unbanip 1.2.3.4 and it will 
 To add another layer of security, add another layer of SSH security sudo apt install libpam-google-authenticator, then after installation enter google-authenticator and press y to all the prompts and scan the QR code with a authenticator app like Duo and sign in with the cdoe from the app.  
 As one way to test it, install hydra on a attacker VM and create a users.txt file with random info in it and a passwords.txt file with random passwords and enter this command hydra -L users.txt -P passwords.txt ssh://10.0.0.20 and press enter. Should see this:  
 <img width="1078" height="173" alt="image" src="https://github.com/user-attachments/assets/a09ba07f-9e58-4a40-bc77-204f0a8bf0c9" />  
-<img width="526" height="170" alt="image" src="https://github.com/user-attachments/assets/c5b3129c-b5a8-47f8-ba03-41c03273c8fc" />  
-In this project, I hardened SSH on Linux by enforcing key-based authentication, disabling root login, and restricting access to specific users or groups. I also secured the server by disabling weak ciphers and protocols, limiting login attempts, and optionally using tools like fail2ban to prevent brute-force attacks. The goal was to reduce the attack surface while following best practices and providing clear setup guidance.  
+<img width="526" height="170" alt="image" src="https://github.com/user-attachments/assets/c5b3129c-b5a8-47f8-ba03-41c03273c8fc" />    
 *Note, might go test a few more times and will document it*
 
 # Metasploit test
@@ -82,6 +81,7 @@ set RHOSTS 10.0.0.20
 set RPORT 22  
 run and result:  
 <img width="547" height="24" alt="image" src="https://github.com/user-attachments/assets/9c31e969-63dd-4b57-9be0-4cab9dd04cc3" />  
+In this project, I hardened SSH on Linux by enforcing key-based authentication, disabling root login, and restricting access to specific users or groups. I also secured the server by disabling weak ciphers and protocols, limiting login attempts, testing hardend status with Metasploit and optionally using tools like fail2ban to prevent brute-force attacks. The goal was to reduce the attack surface while following best practices and providing clear setup guidance.
 
 
 
